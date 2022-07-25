@@ -1,25 +1,21 @@
 <template>
   <div class="text-left m-50 m-auto row">
-    <div class="col-md-8">
-      <div class="input-group mb-3">
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Search"
-          v-model="name"
-        />
-        <div class="input-group-append">
-          <button
-            class="btn btn-outline-secondary"
-            type="button"
-            @click="searchName"
-          >
-            Search
-          </button>
-        </div>
-      </div>
+    <div class="input-group-append">
+      <Input
+        v-model="name"
+        class="col-md-4 h-100"
+        placeholder="Search"
+        @search="searchName"
+      />
+      <button
+        class="btn btn-outline-secondary"
+        type="button"
+        @click="searchName"
+      >
+        Buscar
+      </button>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 mt-4">
       <h4>Listagem de Usuarios</h4>
       <ul class="list-group">
         <li
@@ -66,7 +62,7 @@
           Edit
         </a>
       </div>
-      <div v-else>
+      <div v-else class="mt-4">
         <br />
         <p>Please click on a Users...</p>
       </div>
